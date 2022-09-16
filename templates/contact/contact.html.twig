@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+{% block title %}Contactez nous
+{% endblock %}
+
+{% block body %}
+	<div class="row">
+		<div class="col-8 mx-auto my-3">
+			{%  include 'include/_flashes.html.twig' %}
+		</div>
+	</div>
+
+	<h1 class="text-center mb-5">Contact et accès</h1>
+
+
+	<section>
+		<div class="container">
+
+			<div class="row justify-content-center">
+				<div class="col-md-12">
+					<div class="wrapper">
+						<div class="row mb-5">
+							<div class="col-md-6 contact ">
+								<div class="contact-wrap w-100 p-md-5 p-4">
+									<h3 class="mb-4 text-center">Contactez-nous</h3>
+
+									{{ form_start(form) }}
+									{{ form_widget(form) }}
+
+									{{ form_end(form) }}
+
+								</div>
+							</div>
+
+							<div class="col-md-6 mt-5 d-flex align-items-stretch">
+								<div id="map">
+									<div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3  ">
+										<div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div>
+										<script>
+											(function () {
+															var setting = {
+															"height": 550,
+															"width": 450,
+															"zoom": 17,
+															"queryString": "1 Avenue Montaigne, 75008 Paris, France",
+															"place_id": "ChIJTZrTDd1v5kcREvASK7iUgVA",
+															"satellite": false,
+															"centerCoord": [
+															48.865043768181515, 2.302134349999978
+															],
+															"cid": "0x508194b82b12f012",
+															"lang": "fr",
+															"cityUrl": "/france/paris",
+															"cityAnchorText": "Carte de Paris, Ile de France, France",
+															"id": "map-9cd199b9cc5410cd3b1ad21cab2e54d3",
+															"embed_id": "808413"
+															};
+															var d = document;
+															var s = d.createElement('script');
+															s.src = 'https://1map.com/js/script-for-user.js?embed_id=808413';
+															s.async = true;
+															s.onload = function (e) {
+															window.OneMap.initMap(setting)
+															};
+															var to = d.getElementsByTagName('script')[0];
+															to.parentNode.insertBefore(s, to);
+															})();
+										</script>
+
+										
+									</div>
+
+								</div>
+							</div>
+								</div>
+							</div>
+
+
+						</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></section>{% endblock %}

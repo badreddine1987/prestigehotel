@@ -1,0 +1,49 @@
+{% extends "base.html.twig" %}
+
+
+{% block title %}{% endblock %}
+
+
+{% block body %}
+
+
+
+<section class="container">
+  
+		<h1 class="text-center my-3"> Réserver la chambre  </h1>
+
+
+	<div class="row">
+
+	
+		<div class="col-6 mx-auto my-3">
+
+			  {{ form_start(form, {action: path('app_reservation', {'id': app.request.attributes.get('id') } ) } ) }}
+
+<div class="row">
+           <div class ="col-6" > {{ form_row(form.dateDebut) }} </i> </div>
+           <div class ="col-6" > {{ form_row(form.dateFin) }}   </div>
+            </div>
+
+
+            <div class="row">
+           <div class ="col-12 "> {{ form_row(form.nom) }} </div>
+           <div class ="col-12"> {{ form_row(form.prenom) }} </div>
+            </div>
+            <div class="row">
+           <div class ="col-12 "> {{ form_row(form.email) }} </div>
+           <div class ="col-12"> {{ form_row(form.telephone) }} </div>
+            </div>
+
+            		{{form_row(form.submit)}}
+
+
+			  {{ form_end(form) }}
+  
+
+			</div>
+		</div>
+</section>
+
+
+{% endblock %}

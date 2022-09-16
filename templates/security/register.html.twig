@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register
+{% endblock %}
+
+{% block body %}
+	<h1 class="text-center my-3">Inscription</h1>
+
+	<div class="row">
+		<div class="col-4 mx-auto">
+
+
+			{{ form_start(form) }}
+
+			<div class="row">
+				<div class="col-6">
+					{{ form_row(form.nom) }}
+				</div>
+				<div class="col-6">
+					{{ form_row(form.prenom) }}
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6">
+					{{ form_row(form.civilite) }}
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-6">
+					{{ form_row(form.email) }}
+				</div>
+				<div class="col-6">
+					{{ form_row(form.password) }}
+				</div>
+			</div>
+
+			{{form_row(form.submit)}}
+
+
+			{{ form_end(form) }}
+			{#équivalent  à la balise HTML </form> #}
+
+
+		</div>
+	</div>
+{% endblock %}

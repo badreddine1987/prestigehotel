@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Tableau de bord
+{% endblock %}
+
+{% block body %}
+
+	<h1 class="text-center my-3">Tableau de bord</h1>
+
+	{# ################# FLASHES ################# #}
+	<div class="row">
+		<div class="col-6 mx-auto">
+			{% include 'include/_flashes.html.twig' %}
+		</div>
+	</div>
+	{# ################# FLASHES ################# #}
+
+	{# -------------------------------------------------------------------------------------------------- #}
+	{# BOUTON #}
+	{# -------------------------------------------------------------------------------------------------- #}
+
+	{# ################# BUTTONS ################# #}
+		<div class="row my-5 mx-auto"> <div class="col-4 text-center">
+			<a class=" btn btn-sm btn-outline-dark" href="{{ path('create_chambre') }}">Ajouter Une chambre</a>
+		</div>
+		<div class="col-4 text-center">
+			<a class=" btn btn-sm btn-outline-dark" href="">Ajouter une Classe</a>
+		</div>
+		<div class="col-4 text-center">
+			<a class=" btn btn-sm btn-outline-dark" href="{{ path('show_archives') }}">Voir les archives</a>
+		</div>
+	</div>
+	{# ################# BUTTONS ################# #}
+
+	{# -------------------------------------------------------------------------------------------------- #}
+	{# TABLE CHAMBRE #}
+	{# -------------------------------------------------------------------------------------------------- #}
+	{# ################# TABLE 1 ################# #}
+
+		<div class="row"> <div class="col-10 mx-auto my-4">
+
+			<h2 class="text-center">Tous les Chambre</h2>
+
+			<table class="table">
+				<thead class="table-dark text-center">
+					<tr>
+						<th>#</th>
+						<th>Titre</th>
+						<th>Description</th>
+						<th>Photo</th>
+						<th>Prix Journalier (€)</th>
+						<th>Actions</th>
+
+					</tr>
+				</thead>
+				{# -------------------------------------------------------------------------------------------------- #}
+				<tbody class="text-center">
+					{# -----BOUCLE------ #}
+					{% for chambre in chambres %}
+
+						<tr>
+                            <td>#</td>
+							 <td class="text-center">{{ chambre.titre | length > 20 ? chambre.titre | slice(0,20) ~ '...' : chambre.titre }}</td> 
+							
+							 <td class="text-center">{{ chambre.descriptionCourte | length > 20 ? chambre.descriptionCourte | slice(0,20) ~ '...' : chambre.descriptionCourte }}</td> 
+							 <td class="text-center">{{ chambre.photo  }}</td> 
+							 <td class="text-center">{{ chambre.prixJournalier }}</td> 
+                        <!--====ACTIONS====-->
+							<td class="text-justify">
+                                <a href="{{ path('update_chambre', {'id': chambre.id} )}}" class="text-info" title="Modifier la chambre"><i class="fa fa-edit"></i></a>
+                                <a href="{{ path('soft_delete_chambre', {'id': chambre.id}) }}" class="text-danger" title="Archiver la chambre" onclick="return confirm('Voulez-vous archiver cette chambre ?')"><i class="fa fa-trash"></i></a>
+                            </td>
+                        <!-- ============= ACTIONS ============== -->
+
+						</tr>
+					{% else %}
+						<tr>
+							<td colspan="7" class="bg-info text-center align-middle">Aucune chambre publié</td>
+						</tr>
+					{% endfor %} 
+				</tbody>
+
+			</table>
+
+
+		</div>
+	
+
+
+	{% endblock %}

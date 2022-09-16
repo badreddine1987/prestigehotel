@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos clients on donné leurs avis
+{% endblock %}
+
+{% block body %}
+
+	<div class="container">
+		<div class="row">
+			<div class="col-6 my-3 mx-auto">
+				{% include 'include/_flashes.html.twig' %}
+			</div>
+
+
+			<h1 class="text-center	mx-3 my-3"> Les avis de nos clients </h1>
+
+			{% for commentaire in commentaires | reverse %}
+
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<h2 class="text-center	mx-3 my-3">
+								<i class="fa fa-comments"></i>
+								Votre avis compte :</h2>
+
+								
+							<div class="alert alert-dark text-dark com" role="alert">
+								<h4 class="alert-heading">{{ commentaire.nom ~ ' ' ~ commentaire.prenom ~ ' ,' }}
+									<span class="h6">
+										posté
+										{{ commentaire.createdAt | ago(locale='fr') }}</span>
+								</h4>
+								<h6>
+									Sujet :
+									{{commentaire.categorie}}</h6>
+								<h6>
+									{{commentaire.titre}}</h6>
+
+								<p>
+									{{ commentaire.commentaire }}</p>
+								<hr>
+								<div class="btn-group ">
+									<button type="button" class="btn btn-dark">
+										<i class="fa fa-share-nodes"></i>
+										Partager
+									</button>
+									<button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+										<span class="visually-hidden">Toggle Dropdown</span>
+									</button>
+									<ul class="dropdown-menu">
+										<li>
+											<a class="dropdown-item" href="https://instagram.com/">
+												<i class="fa-brands fa-instagram"></i>
+												Instagram
+											</a>
+										</li>
+										<li><hr class="dropdown-divider"></li>
+										<li>
+											<a class="dropdown-item" href="https://Twitter.com/">
+												<i class="fa-brands fa-twitter"></i>
+												Twitter
+											</a>
+										</li>
+										<li><hr class="dropdown-divider"></li>
+										<li>
+											<a class="dropdown-item" href="https://facebook.com/">
+												<i class="fa-brands fa-facebook-f"></i>
+												Facebook
+											</a>
+										</li>
+									</ul>
+								</div>
+								{% if is_granted("ROLE_ADMIN") %}
+
+
+									<a class="text-danger" href="{{ path('delete_commentaire', {'id': commentaire.id}) }}" title="Supprimer le commentaire" onclick="return confirm('Voulez-vous supprimer ce commentaire ?')">
+										<i class="fa fa-trash"></i>
+									</a>
+								{% endif %}
+							</p>
+						</div>
+
+					{% else %}
+						<div class="alerte alert-warning mb-3 fw-bolder" role="alert">
+							<p>Aucun commentaire pour l'instant
+							</p>
+						</div>
+					{% endfor %}
+				</div>
+				<div class="col">
+					<h2 class="text-center">
+						Souhaitez vous laisser un petit message ?</h2>
+					{{render(url('add_commentaire'))}}
+				</div>
+			</div>
+
+
+		{% endblock %}

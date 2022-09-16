@@ -1,6 +1,5 @@
-<footer class="mt-4 pt-4 ">
+<footer class="mt-4 pt-4">
     <div class="container">
-        <div class="row">
             <div class="col-12 col-md text-center ">
                 <h5 class="my-3">Prestige-Hotel
                 <small class=" text-muted">&copy; {{ 'now' | date('Y') }}</small>
@@ -8,17 +7,23 @@
 
             </div>
             <hr>
-            <div class="col-6 col-md ">
-                <h5>Contact</h5>
-                
-                        {# {{ render(url('render_categories_in_footer')) }} #}
-                
-            </div>
-            <div class="col-6 col-md">
+            <div style="padding: 5px 10px"class="col-10 d-flex justify-content-around mx-auto bg-dark rounded-top">
                 <ul class="list-unstyled">
-                    <li><a href="#" class="text-muted">Mentions légales</a></li>
-                    <li><a href="#" class="text-muted">Politique de confidentialité</a></li>
-                    <li><a href="#" class="text-muted">Contact</a></li>
+                    <li><a href="{{ path('mentionslegales') }}" class="text-white text-decoration-none">Mentions légales</a></li>
+                    <li><a href="{{ path('cgv') }}" class="text-white text-decoration-none">CGV</a></li>
+                </ul>
+                <ul class="list-unstyled">
+                    <li><a href="{{ path('plan') }}" class="text-white text-decoration-none">Plan du site</a></li>
+                    <li><a href="{{ path('newsletter') }}" class="text-white text-decoration-none">S'inscrire à la newsletter</a></li>
+                </ul>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white text-decoration-none">Contact</a></li>
+                    <li><a href="{{ path('app_login') }}" class="text-white text-decoration-none">Espace Membre</a></li>
+                </ul>
+                <ul class="list-unstyled d-flex">
+                    <li><a style="color: white; font-size: 1.2rem" class="m-3" href="https://facebook.com/"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a style="color: white; font-size: 1.2rem" class="m-3" href="https://instagram.com/"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a style="color: white; font-size: 1.2rem" class="m-3" href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -28,6 +33,5 @@
             <div class="col">
                 <p class="text-center text-white">&copy; Prestige-Hotel {{ 'now' | date('Y') }}</p>
             </div>
-        </div>
     </div>
 </footer>

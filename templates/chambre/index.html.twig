@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ChambreController!{% endblock %}
+
+{% block body %}
+
+<div class="row">
+   <div class="col-12 mx-auto">
+        <h1 class="text-center my-3">Chambres et </br> Suites</h1>
+   </div>
+</div>
+<hr>
+
+<div class="container container-chambre">
+<div class="row">
+
+  <div class="left col-4">
+    <h3 class="text-center mx-auto my-5">
+      Welcome to </br> Prestige
+    </h5>
+    <p class="text-center my-5">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas omnis, delectus earum dolores voluptatem ducimus dicta, cupiditate, iste non officiis sint ex expedita. Ducimus sunt harum voluptatum, doloremque explicabo, sapiente quos eius.
+    </p>
+  </div>
+  <div class="right col-4 mx-auto my-5">
+    <img width="500px" src="{{ asset('assets/img/paris.jpg') }}" alt="">
+  </div>
+</div>
+</div>
+
+{# ============================ #}
+<div class="container">
+
+  {# -------------------- #}
+  <div class="row g-0">
+    <div class="col-md-4">
+
+      <img src="{{ asset('assets/img/bedroom.jpg') }}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Chambre de luxe classique</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <h3 class="my-4">à partir de 899€ / nuit</h3>
+        <a classe="reservation" href="{{ path('app_chambre_classique') }}">Consulter</a>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  {# -------------------- #}
+  {# -------------------- #}
+  <div class="row g-0">
+
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Chambre de luxe Confort</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <h3 class="my-4">à partir de 1099€ / nuit</h3>
+        <a classe="reservation" href="{{ path('app_chambre_confort') }}">Consulter</a>
+      </div>
+    </div>
+    {# -- #}
+        <div class="col-md-4">
+      <img src="{{ asset('assets/img/confort.jpg') }}" class="img-fluid rounded-start" alt="...">
+    </div>
+  </div>
+  {# -------------------- #}
+  <br>
+    {# -------------------- #}
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{ asset('assets/img/suite.jpg') }}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Chambre de luxe Suite</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <h3 class="my-4">à partir de 1499€ / nuit</h3>
+        <a classe="reservation" href="{{ path('app_chambre_suite') }}">Consulter</a>
+      </div>
+    </div>
+  </div>
+  <br>
+  {# -------------------- #}
+</div>
+
+  
+
+
+
+
+
+{% endblock %}

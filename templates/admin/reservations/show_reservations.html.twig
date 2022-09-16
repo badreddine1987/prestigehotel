@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Gestion des réservations{% endblock %}
+
+{% block body %}
+
+
+    <h1 class="text-center my-3">Réservations</h1>
+
+    {# ################# FLASHES ################# #}
+    <div class="row">
+        <div class="col-6 mx-auto">
+            {% include 'include/_flashes.html.twig' %}
+        </div>
+    </div>
+    {# ################# FLASHES ################# #}
+
+
+        <div class="col-10 my-5 mx-5">
+      
+
+            <table class="table table-hover">
+                <thead class="table-dark text-center">
+                    <tr>
+                        <th>#</th>
+                        <th>Chambre</th>
+                        <th>Date d'arrivée</th>
+                        <th>Date de départ</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Email</th>
+                        <th>Téléphone</th>
+                        <th>Rôle</th>
+                        <th>Inscrit le</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%  for commande in commandes %}
+
+                        <tr>
+                            <td class="text-center">{{ commande.id }}</td>
+                              <td class="text-center">{{ commande.chambre }}</td>
+                              <td class="text-center">{{ commande.dateDebut | date('d/m/Y') }}</td>
+                              <td class="text-center">{{ commande.datefin | date('d/m/Y')}}</td>
+                            <td class="text-center">{{ commande.nom }}</td>
+                            <td class="text-center">{{ commande.prenom }}</td>
+                            <td class="text-center">{{ commande.telephone }}</td>
+                            <td class="text-center">{{ commande.email }}</td>
+                            <td class="text-center">{{ commande.createdAt | date('d/m/Y') }}</td>
+                            <td class="text-center">
+                                <a href="" class="text-black" title="Modifier le rôle"><i class="fa fa-eye"></i></a>
+                                <a href="" class="text-black" title="Modifier le rôle"><i class="fa fa-edit"></i></a>
+                                <a href="" class="text-black" title="Modifier le rôle"><i class="fa fa-trash"></i></a>
+                                
+                            </td>
+                        </tr>
+
+                    {% else %}
+                        <tr>
+                            <td colspan="11" class="bg-warning text-center align-middle">Aucune commande</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+     
+    </div>
+
+   
+{% endblock %}

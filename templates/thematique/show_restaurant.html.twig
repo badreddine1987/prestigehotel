@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Restaurant
+{% endblock %}
+
+{% block body %}
+
+
+	<h1 class="text-center my-3 card-title mb-5">Restaurant</h1>
+
+	<section class="row my-3">
+		<div class="col-10 mx-auto" style="width: 18rem;">
+			<img src="{{ asset('assets/img/glass.jpg') }}" class="card-img-top" alt="...">
+			<p class="text-center">
+				<strong>Carte Brasserie</strong>
+			</p>
+			<div class="text-center">
+
+				<a href="{{ asset('assets/pdf/Carte.pdf') }}" class="btn btn-dark col-10 text-center ">
+					Télécharger la carte</a>
+
+
+			</div>
+		</div>
+
+
+		<div class="col-10 mx-auto" style="width: 18rem;">
+			<img src="{{ asset('assets/img/indoors.jpg') }}" class="card-img-top" alt="...">
+			<p class="text-center">
+				<strong>Carte Dégustation</strong>
+			</p>
+			<div class="text-center">
+
+				<a href="{{ asset('assets/pdf/Restaurant_Carte.pdf') }}" class="btn btn-dark col-10 text-center">
+					Télécharger la carte</a>
+			</div>
+		</div>
+
+
+		<div class="col-10 mx-auto" style="width: 18rem;">
+			<img src="{{ asset('assets/img/dining-room.jpg') }}" class="card-img-top" alt="...">
+			<p class="text-center">
+				<strong>Carte Restaurant</strong>
+			</p>
+			<div class="text-center">
+
+				<a href="{{ asset('assets/pdf/diner.pdf') }}" class="btn btn-dark col-10 text-center">
+					Télécharger la carte</a>
+			</div>
+		</div>
+	</section>
+
+
+{% endblock %}

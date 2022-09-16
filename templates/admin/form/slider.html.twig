@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+
+{% block body %}
+    
+   
+	{% if slider is not defined %}
+
+		<h1 class="text-center my-3">
+			Ajouter une photo
+		</h1>
+
+	{% else %}
+
+		<h1 class="text-center my-3">
+			Modifier la photo
+		</h1>
+
+	{% endif %}
+	
+ <div class="row my-5 mx-auto">
+        <div class="col-4">
+            <a class="btn btn-sm btn-outline-dark" href="{{ path('show_slider') }}"><i class="fa-solid fa-arrow-left"></i> Annuler</a>
+        </div>
+    </div>
+
+	<div class="row">
+		<div class="col-2 mx-auto my-3">
+
+			{{ form(form) }}
+			</div>
+		</div>
+
+	{% endblock %}

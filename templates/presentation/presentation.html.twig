@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Notre histoire
+{% endblock %}
+
+{% block body %}
+
+
+	<section class="text-center about">
+		<h1 class='about-title'>Prestige Hotel</h1>
+		<p></p>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-sm-6  about-item wow lightSpeedIn" data-wow-offset="200">
+					<span class="fa fa-bed"></span>
+					<a href="{{ path('app_chambre') }}">
+						<h2>Chambre</h2>
+					</a>
+					<p class="lead">
+						C’est un lieu auquel on ne s’attend pas, un bâtiment des années 30, rare et surprenant.
+						<br>
+						De généreux espaces vous attendent alors que vous pénétrez dans votre chambre. Chacune d’entre elles a été décorée de sorte à vous faire vivre un moment unique du début jusqu'à la fin de votre séjour.
+						<br>
+						Découvrez l’Art de Vivre du Romantique lors de votre séjour à l’hôtel 5 étoiles Prestige.
+						<br>
+						C’est tout le style de vie du luxe, de la culture et de la passion qui se cache au cœur de cette sublime bâtisse Haussmannienne, à quelques pas de la plus belle avenue du monde.<br>
+
+						Laissez-vous séduire par l’élégance, la singularité et le confort de l’hôtel. Des chambres luxueuses et raffinées au Spa d’exception en passant par le restaurant de haute volée, vous serez charmé dès votre arrivée.D’une élégance et d’un confort incomparables, les hôtels du groupe Inwood vous offrent l’émotion de la découverte autour de l’Art de Vivre à la Française. Romantique, Epicurien, Voyageur… Plongez dans les univers raffinés, précieux et personnalisés de chacun de nos boutiques-hôtels.</p>
+				</div>
+				<div class="col-lg-6 col-sm-6 about-item wow lightSpeedIn" data-wow-offset="200">
+					<span class="fa fa-utensils"></span>
+					<a href="{{ path("show_restaurant") }}">
+						<h2>Restaurant
+						</h2>
+					</a>
+					<p class="lead">La discretion, l’ultime élégance
+												Un afterwork avec cocktails réinventés ou une exposition... L'hotel Prestige fait partie de ces lieux connectés où la création parisienne aime à se mettre en scène discrètement mais avec talent.<br>
+
+						Les Parisiens aiment à s’y retrouver dans l’atmosphère sereine et feutrée du restaurant. Une cuisine moderne et cosmopolite s’offre aux amateurs et invite à de nouvelles expériences.<br>
+						Le Chef y célèbre une cuisine française délicate, singulière et respectueuse des aliments.<br>
+						<br>
+						Chaque jour, il propose des légumes issus d’agriculture raisonnée, des poissons provenant d’une pêche durable et des viandes de variétés nobles et bien élevées.<br><br>
+						Du petit-déjeuner au déjeuner, en passant par un thé à la française ou la dégustation d’une boisson inédite, Le tout s’articule autour de produits de saisons, délicats et délicieux.<br>
+					</p>
+				</div>
+				<div class="clearfix visible-md-block visible-sm-block"></div>
+				<div class="col-lg-6 col-sm-6 about-item wow lightSpeedIn" data-wow-offset="200">
+					<span class="fa fa-spa"></span>
+					<a href="{{ path("show_spa") }}">
+						<h2>Spa</h2>
+					</a>
+					<p class="lead">Profitez de votre escapade au sein de l'Hôtel Prestige pour vous ressourcer et vous détendre.
+												Le temps de votre séjour,  accordez-vous un moment de relaxation dans notre sauna ou hammam ou offrez-vous un moment de bien-être intense dans notre Spa avec des soins personnalisés.<br><br>
+
+						Les massages s’adaptent à chacun, recèlent de nombreux bienfaits et vous donnent une occasion unique de vous ressourcer.<br>
+						Détente, plaisir et bien-être sont les mots-clés pour prendre soin de votre corps et de votre esprit.<br><br>
+						Le temps de votre séjour, prenez soin de vous lors d’une séance de sport dans notre salle de fitness, accordez-vous un moment de relaxation dans notre sauna ou hammam ou offrez-vous un moment de bien-être intense dans notre Spa avec des soins personnalisés.</p>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+
+{% endblock %}

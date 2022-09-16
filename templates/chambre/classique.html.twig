@@ -1,0 +1,68 @@
+{% extends "base.html.twig" %}
+
+
+{% block title %}{% endblock %}
+
+
+{% block body %}
+
+	<div class="row">
+		<div class="col-12 mx-auto">
+			<h1 class="text-center my-3">Chambre de luxe classique</h1>
+		</div>
+	</div>
+	<hr>
+	<section
+		class="container">
+		{# ------------------------ #}
+		{% for chambre in chambres %}
+			{# ------------------------ #}
+			<div class="row">
+				<div class="col-4">
+					<img src="{{ asset('uploads/' ~ chambre.photo) }}" class="card-img-top" alt="...">
+				</div>
+				<div class="col-8 my-4 reservation">
+					<h1>{{ chambre.titre }}</h1>
+					<p>{{ chambre.descriptionCourte }}</p>
+					<p>
+						<span>{{ chambre.prixJournalier }}</span>
+						€
+					</p>
+					<a classe="reservation" href="{{ path('app_reservation', {'id': chambre.id} ) }}">Réserver</a>
+
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-4 mx-auto">
+				<h2 class="text-center mx-auto">Equipement</h2>
+					<ul class="list">
+						<li><img width="20px" class="picto picto-small" src="{{ asset('assets/img/svg/alt-1.svg')}}"><span> Lit Queen ou Lit Twin</span>
+						</li>
+						<li><img width="20px" class="picto picto-small" src="{{ asset('assets/img/svg/alt-2.svg')}}"> <span> Douche ou baignoire</span>
+						</li>
+						<li><img width="20px" class="picto picto-small" src="{{ asset('assets/img/svg/alt-3.svg')}}"> <span> Vue cour ou rue de Berri</span>
+						</li>
+						<li><img width="20px" class="picto picto-small" src="{{ asset('assets/img/svg/alt-4.svg')}}"> <span> Produits d’accueil</span>
+						</li>
+						<li><img width="20px" class="picto picto-small" src="{{ asset('assets/img/svg/alt-6.svg')}}"> <span> Chaussons</span>
+						</li>
+						<li><img width="20px" class="picto picto-small" src="{{ asset('assets/img/svg/alt-7.svg')}}"> <span> Machine Expresso</span>
+						</li>
+						
+					</ul>
+				</div>
+				<div class="col-6 mx-auto">
+					<h2 class="text-center mx-auto">Description</h2>
+					<p>{{ chambre.descriptionLong }}</p>
+				</div>
+			</div>
+			<br>
+			{# ------------------------ #}
+		{% endfor %}
+		{# ------------------------ #}
+
+	</section>
+
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Gestion du slider{% endblock %}
+
+{% block body %}
+
+
+    <h1 class="text-center my-3">Photos ajoutées</h1>
+
+    {# ################# FLASHES ################# #}
+    <div class="row">
+        <div class="col-6 mx-auto">
+            {% include 'include/_flashes.html.twig' %}
+        </div>
+    </div>
+    {# ################# FLASHES ################# #}
+<div class="row my-5 mx-auto">
+        <div class="col-12">
+            <a class="btn btn-sm btn-outline-dark" href="{{ path('add_photo') }}"><i class="fa-solid fa-plus-circle"></i> Ajouter une photo</a>
+        </div>
+    </div>
+
+        <div class="col-10 my-5 mx-5">
+      
+
+            <table class="table table-hover">
+                <thead class="table-dark text-center">
+                    <tr>
+                        <th>#</th>
+                        <th>Photo</th>
+                        <th>Ordre</th>
+                        <th>Ajouter le</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%  for slider in sliders %}
+
+                        <tr>
+                            <td class="text-center">{{ slider.id }}</td>
+                            <td class="text-center"><img src="{{asset('uploads/' ~ slider.photo )}}" alt="image de slider" width="80" height="58" class="img-custom"></a></td>
+                            <td class="text-center">{{ slider.ordre }}</td>
+                            <td class="text-center">{{ slider.createdAt | date('d/m/Y') }}</td>
+                            <td class="text-center">
+                                 <a href="{{ path('update_photo', {'id': slider.id}) }}" class="text-warning" title="Modifier la photo"><i class="fa fa-edit"></i></a> 
+                                <a href="{{ path('delete_photo', {'id': slider.id}) }}" class="text-danger" title="Supprimer définitivement la photo" onclick="return confirm('Voulez-vous supprimer définitivement cet article ?')" title="Supprimer la photo"><i class="fa fa-trash"></i></a>
+                                
+                            </td>
+                        </tr>
+
+                    {% else %}
+                        <tr>
+                            <td colspan="7" class="bg-info text-center align-middle">Aucune photo ajouté</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+     
+    </div>
+
+   
+{% endblock %}

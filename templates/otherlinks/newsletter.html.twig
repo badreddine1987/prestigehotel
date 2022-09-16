@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Newsletter
+{% endblock %}
+
+{% block body %}
+
+
+	<div class="row">
+		<div class="col-8 mx-auto my-3">
+			{%  include 'include/_flashes.html.twig' %}
+		</div>
+	</div>
+
+	<h1 class="text-center mb-5">Inscrivez-vous à la Newsletter</h1>
+
+
+	<section>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6">
+					<div class="wrapper">
+						<div class="row mb-5">
+							<div class="col-md-12 contact ">
+								<div class="contact-wrap w-100 p-md-5 p-4">
+									<h3 class="mb-4 text-center">Inscrivez-vous à la newsletter</h3>
+
+									{{ form(form) }}
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	{% endblock %}

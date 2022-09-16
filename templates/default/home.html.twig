@@ -1,7 +1,42 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %}Accueil
+{% endblock %}
 
 {% block body %}
-    <h1>test</h1>
+
+
+	<section class="head_container">
+		{{render(url('carousel_in_nav'))}}
+	</section>
+	<section class="description">
+		<div class="row">
+			<div class="col-12 mx-auto">
+				<img
+				src="{{ asset('assets/img/logo.png') }}" alt="">
+			</div>
+		</div>
+	</section>
+  <div class="row">
+		<div class="col-8 mx-auto my-3">
+			{%  include 'include/_flashes.html.twig' %}
+		</div>
+	</div>
+
+
+	<div class="row">
+	
+			<h5 class="col-8 text-center my-3 mx-auto">L'UNE DES GRANDES DAMES LES PLUS EN VOGUE DE LA SCÈNE HÔTELIÈRE PARISIENNE DEPUIS SON ASSOCIATION AVEC L'ICÔNE CHRISTIAN DIOR.</h5>
+	</div>
+
+
+<div class="row">
+<div class="col-10 mx-auto">
+
+    {% include "rendered/card.html.twig" %}
+</div>
+</div>
+
+  
+
 {% endblock %}

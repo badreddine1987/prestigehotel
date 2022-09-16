@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Plan du site{% endblock %}
+
+{% block body %}
+
+   
+    <div class="col-8 mx-auto center">
+
+    <h1>Plan du site</h1>
+    <ul>
+        <li><a href="{{ path("home") }}" class="text-reset text-decoration-none">Acceuil</a></li>
+        <li><a href="{{ path("app_chambre") }}" class="text-reset text-decoration-none">Chambre</a></li>
+        <ul>
+            <li><a href="{{ path('app_chambre_classique') }}" class="text-reset text-decoration-none">Classique</a></li>
+            <li><a href="{{ path('app_chambre_confort') }}" class="text-reset text-decoration-none">Confort</a></li>
+            <li><a href="{{ path('app_chambre_suite') }}" class="text-reset text-decoration-none">Suite</a></li>
+        </ul>
+        <li><a href="{{ path("show_restaurant") }}" class="text-reset text-decoration-none">Restaurant</a></li>
+        <li><a href="{{ path("show_spa") }}" class="text-reset text-decoration-none">Le Spa</a></li>
+        <li><a href="{{ path('show_commentaire') }}" class="text-reset text-decoration-none">Avis</a></li>
+        <li><a href="{{ path('presentation') }}" class="text-reset text-decoration-none">L’hôtel</a></li>
+        <ul>
+            <li><a href="{{ path('contact') }}" class="text-reset text-decoration-none">Contact et Accès</a></li>
+        </ul>
+        <li><a href="{{ path('show_articles') }}" class="text-reset text-decoration-none">Actualités</a></li>
+        <li><a href="{{ path('mentionslegales') }}" class="text-reset text-decoration-none">Mentions Légales</a></li>
+        <li><a href="{{ path('cgv') }}" class="text-reset text-decoration-none">CGV</a></li>
+        <li><a href="{{ path('newsletter') }}" class="text-reset text-decoration-none">S’inscrire à la newsletter</a></li>
+        <li><a href="{{ path('plan') }}" class="text-reset text-decoration-none">Plan du site</a></li>
+        
+    </ul>
+
+
+    
+    </div>
+    
+
+
+{% endblock %}

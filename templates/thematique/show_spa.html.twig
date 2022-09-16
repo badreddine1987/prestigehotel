@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Spa
+{% endblock %}
+
+{% block body %}
+
+
+	<h1 class="text-center my-3 card-title mb-5">Spa</h1>
+
+	<section class="row my-3">
+		<div class="col-10 mx-auto" style="width: 18rem;">
+			<img src="{{ asset('assets/img/spa.jpg') }}" class="card-img-top" alt="...">
+			<p class="text-center">
+				<strong>Spa avec soin Détente</strong>
+			</p>
+			<div class="text-center">
+				
+					
+
+						<a href="{{ asset('assets/pdf/spa.pdf') }}" class="btn btn-dark col-10 text-center">
+					Télécharger la carte</a>
+
+
+				
+			</div>
+		</div>
+
+		<div class="col-10 mx-auto" style="width: 18rem;">
+			<img src="{{ asset('assets/img/wellness-spa.jpg') }}" class="card-img-top" alt="...">
+			<p class="text-center">
+				<strong>Spa avec soin Relaxant</strong>
+			</p>
+			<div class="text-center">
+
+				
+			<a href="{{ asset('assets/pdf/relaxant.pdf') }}" class="btn btn-dark col-10 text-center">
+					Télécharger la carte</a>
+
+
+
+		</div>
+	</div>
+
+	<div class="col-10 mx-auto" style="width: 18rem;">
+		<img src="{{ asset('assets/img/detente.jpg') }}" class="card-img-top" alt="...">
+		<p class="text-center">
+			<strong>Spa avec soin Plaisir</strong>
+		</p>
+		<div class="text-center">
+			
+
+			<a href="{{ asset('assets/pdf/plaisir.pdf') }}" class="btn btn-dark col-10 text-center">
+					Télécharger la carte</a>
+
+
+		</div>
+	</div>
+</section>{% endblock %}
